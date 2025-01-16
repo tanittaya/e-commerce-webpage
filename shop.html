@@ -3,41 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-page</title>
+    <title>test2</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="test2.css">
 </head>
 <body>
     <nav>
+        <!-- Logo -->
         <div class="logo">
             <img src="image/logo-main.png" alt="logo">
         </div>
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="icons">
-            <img src="image/user.png" alt="user">
-            <img src="image/search.png" alt="search">
-            <img src="image/heart.png" alt="heart">
-            <img src="image/shopping-cart.png" alt="shopping-cart">
+        <button class="toggle-button" onclick="toggleNavbar()">☰</button>
+        <div class="menu">
+            <ul class="navbar">
+                <li><a >Home</a></li>
+                <li><a >Shop</a></li>
+                <li><a >About</a></li>
+                <li><a >Contact</a></li>
+            </ul>
+            <div class="icons">
+                <img src="image/user.png" alt="user">
+                <span>User</span>
+                <img src="image/search.png" alt="search">
+                <span>Search</span>
+                <img src="image/heart.png" alt="heart">
+                <span>Wichlist</span>
+                <img src="image/shopping-cart.png" alt="shopping-cart">
+                <span>Cart</span>
+            </div>
         </div>
     </nav>
 
-    <!-- background section -->
     <div class="shop-header">
         <div class="shop-header-content">
             <img src="image/background-shop.png" alt="background-shop">
+            <div class="shop-header-text">
+                <h1>Shop</h1>
+                <p> <span class="shop-home">Home > </span> Shop</p>
+            </div>
         </div>
     </div>
+    
     <div class="toolbar">
         <div class="toolbar-left">
             <button class="filter"><img src="image/filter.png" alt="filter"> Filter</button>
             <button ><img src="image/grid.png" alt="grid"></button>
             <button class="view"><img src="image/view-list.png" alt="view-list"></button>
-            <span><img src="image/line-tool.png" alt="line-tool">Showing 1–16 of 32 results</span>
+            <span class="vertical-line"></span>
+            <span> Showing 1–16 of 32 results</span>
         </div>
         <div class="toolbar-right">
             <label for="show">Show</label>
@@ -55,7 +68,7 @@
             <!-- Product 1 -->
             <div class="products-block">
                 <img src="image/syltherine.png" alt="syltherine">
-                <img src="image/discount-30%.png" alt="discount">
+                <div class="discount-badge">-30%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Stylish cafe chair</div>
                 <div class="product-price">
@@ -95,7 +108,7 @@
             <!-- Product 3 -->
             <div class="products-block">
                 <img src="image/lolito.png" alt="lolito">
-                <img src="image/discount-50%.png" alt="discount">
+                <div class="discount-badge">-50%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Luxury big sofa</div>
                 <div class="product-price">
@@ -116,7 +129,7 @@
             <!-- Product 4 -->
             <div class="products-block">
                 <img src="image/respira.png" alt="respira">
-                <img src="image/new.png" alt="new-collection">
+                <div class="new-badge">New</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Outdoor bar table and stool</div>
                 <div class="product-price">Rp 500.000</div>
@@ -132,86 +145,10 @@
                 </div>
             </div>
     
-            <!-- Product 5 -->
-            <div class="products-block">
-                <img src="image/grifo.png" alt="grifo">
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Night lamp</div>
-                <div class="product-price">Rp 1.500.000</div>
-                <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
-                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
-                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
-                </div>
-            </div>
-    
-            <!-- Product 6 -->
-            <div class="products-block">
-                <img src="image/muggo.png" alt="muggo">
-                <img src="image/discount-50%.png" alt="discount">
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Small mug</div>
-                <div class="product-price">Rp 150.000</div>
-                <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
-                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
-                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
-                </div>
-            </div>
-    
-            <!-- Product 7 -->
-            <div class="products-block">
-                <img src="image/pingky.png" alt="pingky">
-                <img src="image/new.png" alt="new-collection">
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Cute bed set</div>
-                <div class="product-price">
-                    Rp 7.000.000 <del>Rp 14.000.000</del>
-                </div>
-                <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
-                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
-                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
-                </div>
-            </div>
-    
-            <!-- Product 8 -->
-            <div class="products-block">
-                <img src="image/potty.png" alt="potty">
-                <img src="image/new.png" alt="new-collection">
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Minimalist flower pot</div>
-                <div class="product-price">Rp 500.000</div>
-                <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
-                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
-                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
-                </div>
-            </div>
             <!-- Product 1 -->
             <div class="products-block">
                 <img src="image/syltherine.png" alt="syltherine">
-                <img src="image/discount-30%.png" alt="discount">
+                <div class="discount-badge">-30%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Stylish cafe chair</div>
                 <div class="product-price">
@@ -235,6 +172,7 @@
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Stylish cafe chair</div>
                 <div class="product-price">Rp 2.500.000</div>
+                <!-- Hover Overlay -->
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -250,7 +188,7 @@
             <!-- Product 3 -->
             <div class="products-block">
                 <img src="image/lolito.png" alt="lolito">
-                <img src="image/discount-50%.png" alt="discount">
+                <div class="discount-badge">-50%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Luxury big sofa</div>
                 <div class="product-price">
@@ -271,7 +209,7 @@
             <!-- Product 4 -->
             <div class="products-block">
                 <img src="image/respira.png" alt="respira">
-                <img src="image/new.png" alt="new-collection">
+                <div class="new-badge">New</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Outdoor bar table and stool</div>
                 <div class="product-price">Rp 500.000</div>
@@ -286,13 +224,15 @@
                   </div>
                 </div>
             </div>
-    
-            <!-- Product 5 -->
+            <!-- Product 1 -->
             <div class="products-block">
-                <img src="image/grifo.png" alt="grifo">
+                <img src="image/syltherine.png" alt="syltherine">
+                <div class="discount-badge">-30%</div>
                 <div class="product-name">Syltherine</div>
-                <div class="product-inform">Night lamp</div>
-                <div class="product-price">Rp 1.500.000</div>
+                <div class="product-inform">Stylish cafe chair</div>
+                <div class="product-price">
+                    Rp 2.500.000 <del>Rp 3.500.000</del>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -305,13 +245,13 @@
                 </div>
             </div>
     
-            <!-- Product 6 -->
+            <!-- Product 2 -->
             <div class="products-block">
-                <img src="image/muggo.png" alt="muggo">
-                <img src="image/discount-50%.png" alt="discount">
+                <img src="image/leviosa.png" alt="leviosa">
                 <div class="product-name">Syltherine</div>
-                <div class="product-inform">Small mug</div>
-                <div class="product-price">Rp 150.000</div>
+                <div class="product-inform">Stylish cafe chair</div>
+                <div class="product-price">Rp 2.500.000</div>
+                <!-- Hover Overlay -->
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -324,12 +264,12 @@
                 </div>
             </div>
     
-            <!-- Product 7 -->
+            <!-- Product 3 -->
             <div class="products-block">
-                <img src="image/pingky.png" alt="pingky">
-                <img src="image/new.png" alt="new-collection">
+                <img src="image/lolito.png" alt="lolito">
+                <div class="discount-badge">-50%</div>
                 <div class="product-name">Syltherine</div>
-                <div class="product-inform">Cute bed set</div>
+                <div class="product-inform">Luxury big sofa</div>
                 <div class="product-price">
                     Rp 7.000.000 <del>Rp 14.000.000</del>
                 </div>
@@ -345,22 +285,102 @@
                 </div>
             </div>
     
-            <!-- Product 8 -->
+            <!-- Product 4 -->
             <div class="products-block">
-                <img src="image/potty.png" alt="potty">
-                <img src="image/new.png" alt="new-collection">
+                <img src="image/respira.png" alt="respira">
+                <div class="new-badge">New</div>
                 <div class="product-name">Syltherine</div>
-                <div class="product-inform">Minimalist flower pot</div>
+                <div class="product-inform">Outdoor bar table and stool</div>
                 <div class="product-price">Rp 500.000</div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
                     </form>
-                    <div class="action-buttons">
+                  <div class="action-buttons">
                         <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
                         <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                    </div>
+                  </div>
+                </div>
+            </div>
+    
+            <!-- Product 1 -->
+            <div class="products-block">
+                <img src="image/syltherine.png" alt="syltherine">
+                <div class="discount-badge">-30%</div>
+                <div class="product-name">Syltherine</div>
+                <div class="product-inform">Stylish cafe chair</div>
+                <div class="product-price">
+                    Rp 2.500.000 <del>Rp 3.500.000</del>
+                </div>
+                <div class="hover-overlay">
+                    <form action="single-product.html">
+                        <button class="add-to-cart">Add to cart</button>
+                    </form>
+                  <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                  </div>
+                </div>
+            </div>
+    
+            <!-- Product 2 -->
+            <div class="products-block">
+                <img src="image/leviosa.png" alt="leviosa">
+                <div class="product-name">Syltherine</div>
+                <div class="product-inform">Stylish cafe chair</div>
+                <div class="product-price">Rp 2.500.000</div>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay">
+                    <form action="single-product.html">
+                        <button class="add-to-cart">Add to cart</button>
+                    </form>
+                  <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                  </div>
+                </div>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="products-block">
+                <img src="image/lolito.png" alt="lolito">
+                <div class="discount-badge">-50%</div>
+                <div class="product-name">Syltherine</div>
+                <div class="product-inform">Luxury big sofa</div>
+                <div class="product-price">
+                    Rp 7.000.000 <del>Rp 14.000.000</del>
+                </div>
+                <div class="hover-overlay">
+                    <form action="single-product.html">
+                        <button class="add-to-cart">Add to cart</button>
+                    </form>
+                  <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                  </div>
+                </div>
+            </div>
+    
+            <!-- Product 4 -->
+            <div class="products-block">
+                <img src="image/respira.png" alt="respira">
+                <div class="new-badge">New</div>
+                <div class="product-name">Syltherine</div>
+                <div class="product-inform">Outdoor bar table and stool</div>
+                <div class="product-price">Rp 500.000</div>
+                <div class="hover-overlay">
+                    <form action="single-product.html">
+                        <button class="add-to-cart">Add to cart</button>
+                    </form>
+                  <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                  </div>
                 </div>
             </div>
         </div>
@@ -406,6 +426,7 @@
 
 
         <!-- Footer Section -->
+    <hr>
     <footer class="footer">
         <div class="footer-middle">
             <div class="footer-section address">
@@ -432,8 +453,8 @@
             <div class="footer-section newsletter">
                 <div class="footer-inform">Newsletter</div>
                 <div class="subscribe-form">
-                    <input type="email" placeholder="Enter Your Email Address">
-                    <button>SUBSCRIBE</button>
+                    <div class="e-mail">Enter Your Email Address <span class="underline"></span></div>
+                    <div class="subscribe">Subscribe  <span class="underline subscribe"></span></div>
                 </div>
             </div>
         </div>
@@ -441,6 +462,13 @@
             <p>2023 Funiro. All rights reserved</p>
         </div>
     </footer>
+
+    <script>
+        function toggleNavbar() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active'); 
+        } 
+    </script>
 
 
 </body>

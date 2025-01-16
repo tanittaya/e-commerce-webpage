@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>single-product</title>
+    <title>test3</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="single-product.css">
+    <link rel="stylesheet" href="test3.css">
 </head>
 <body>
     <nav>
+        <!-- Logo -->
         <div class="logo">
             <img src="image/logo-main.png" alt="logo">
         </div>
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="icons">
-            <img src="image/user.png" alt="user">
-            <img src="image/search.png" alt="search">
-            <img src="image/heart.png" alt="heart">
-            <img src="image/shopping-cart.png" alt="shopping-cart">
+        <button class="toggle-button" onclick="toggleNavbar()">☰</button>
+        <div class="menu">
+            <ul class="navbar">
+                <li><a >Home</a></li>
+                <li><a >Shop</a></li>
+                <li><a >About</a></li>
+                <li><a >Contact</a></li>
+            </ul>
+            <div class="icons">
+                <img src="image/user.png" alt="user">
+                <span>User</span>
+                <img src="image/search.png" alt="search">
+                <span>Search</span>
+                <img src="image/heart.png" alt="heart">
+                <span>Wichlist</span>
+                <img src="image/shopping-cart.png" alt="shopping-cart">
+                <span>Cart</span>
+            </div>
         </div>
     </nav>
     <div class="breadcrumb">
-        <a href="#">Home</a><div class="arrow-right"> > </div><a href="#">Shop</a><div class="arrow-right"> > </div>  <span><img src="image/line-tool.png" alt="line-tool">Asgaard sofa</span>
+        <a href="#">Home</a><div class="arrow-right"> > </div><a href="#">Shop</a><div class="arrow-right"> > </div><span class="vertical-line"></span><span>Asgaard sofa</span>
     </div>
       
     <div class="product-page">
@@ -49,7 +57,7 @@
             <p class="price">Rs. 250,000.00</p>
           
             <div class="rating">
-                <div class="stars"><img src="image/star.png" alt="star"></div> <div class="line-review"><img src="image/line-tool.png" alt="line-review"></div><span class="reviews">5 Customer Review</span>
+                <div class="stars"><img src="image/star.png" alt="star"></div><span class="vertical-line review"></span><span class="reviews">5 Customer Review</span>
             </div>
     
             <p class="description">
@@ -81,19 +89,28 @@
                     <button class="quantity-btn increment">+</button>
                   </div>
                 <button class="add-to-cart">Add To Cart</button>
-                <button class="compare">+ Compare</button>
             </div>
             <hr>
             <div class="product-meta">
-                <div class="meta-name">SKU<span class="meta-dot space">:</span> SS001</div>
-                <div class="meta-name">Category<span class="meta-dot">:</span> Sofas</div>
-                <div class="meta-name">Tags<span class="meta-dot space3">:</span> Sofa, Chair, Home, Shop</div>
-                <div class="meta-name">Share<span class="meta-dot space4">:</span> 
-                    <img src="image/facebook-icon.png" alt="facebook"> 
-                    <img src="image/instagram-icon.png" alt="instagram"> 
-                    <img src="image/x-icon.png" alt="x"> 
+                <div class="meta-name">
+                    SKU<span class="meta-dot">:</span> SS001
+                </div>
+                <div class="meta-name">
+                    Category<span class="meta-dot">:</span> Sofas
+                </div>
+                <div class="meta-name">
+                    Tags<span class="meta-dot">:</span> Sofa, Chair, Home, Shop
+                </div>
+                <div class="meta-name">
+                    Share<span class="meta-dot">:</span>
+                    <div class="meta-comunity">
+                        <img src="image/facebook-icon.png" alt="facebook">
+                        <img src="image/instagram-icon.png" alt="instagram">
+                        <img src="image/x-icon.png" alt="x">
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 
@@ -130,7 +147,7 @@
             <!-- Product 1 -->
             <div class="products-block">
                 <img src="image/syltherine.png" alt="syltherine">
-                <img src="image/discount-30%.png" alt="discount">
+                <div class="discount-badge">-30%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Stylish cafe chair</div>
                 <div class="product-price">
@@ -149,7 +166,7 @@
             <!-- Product 3 -->
             <div class="products-block">
                 <img src="image/lolito.png" alt="lolito">
-                <img src="image/discount-50%.png" alt="discount">
+                <div class="discount-badge">-50%</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Luxury big sofa</div>
                 <div class="product-price">
@@ -160,7 +177,7 @@
             <!-- Product 4 -->
             <div class="products-block">
                 <img src="image/respira.png" alt="respira">
-                <img src="image/new.png" alt="new-collection">
+                <div class="new-badge">New</div>
                 <div class="product-name">Syltherine</div>
                 <div class="product-inform">Outdoor bar table and stool</div>
                 <div class="product-price">Rp 500.000</div>
@@ -169,6 +186,7 @@
         <button>Show More</button>
     </div>
     <!-- footer-section -->
+    <hr>
     <footer class="footer">
         <div class="footer-middle">
             <div class="footer-section address">
@@ -195,8 +213,8 @@
             <div class="footer-section newsletter">
                 <div class="footer-inform">Newsletter</div>
                 <div class="subscribe-form">
-                    <input type="email" placeholder="Enter Your Email Address">
-                    <button>SUBSCRIBE</button>
+                    <div class="e-mail">Enter Your Email Address <span class="underline"></span></div>
+                    <div class="subscribe">Subscribe  <span class="underline subscribe"></span></div>
                 </div>
             </div>
         </div>
@@ -204,6 +222,12 @@
             <p>2023 Funiro. All rights reserved</p>
         </div>
     </footer>
+    <script>
+        function toggleNavbar() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active'); 
+        } 
+    </script>
 
 </body>
 </html>
