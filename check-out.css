@@ -426,13 +426,14 @@ nav {
     justify-content: space-between;
     gap: 20px;
     width: 1242px;
-    margin: 0 auto;
+    margin: 63px auto 52px;
 }
 
 .billing-details {
     width: 608px;
     background: #fff;
-    margin: 63px auto 52px;
+    padding: 35px 0px 0px 74px;
+   
 }
 
 .billing-details h2 {
