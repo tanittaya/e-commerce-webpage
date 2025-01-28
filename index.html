@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>E-commerce Internship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -27,8 +28,10 @@
                 <span>Search</span>
                 <img src="image/heart.png" alt="heart">
                 <span>Wichlist</span>
-                <img src="image/shopping-cart.png" alt="shopping-cart">
-                <span>Cart</span>
+                <a href="cart.html" class="cart-link">
+                    <img src="image/shopping-cart.png" alt="Shopping Cart Icon">
+                    <span>Cart</span>
+                </a>
             </div>
         </div>
     </nav>
@@ -40,7 +43,9 @@
             <h4>New Arrival</h4>
             <h1>Discover Our <br> New Collection</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-            <button>BUY NOW</button>
+            <form action="shop.html">
+                <button class="show-more-button">Show More</button>
+            </form>
            
         </div>
     </div>
@@ -69,10 +74,12 @@
             <div class="products-block">
                 <img src="image/syltherine.png" alt="syltherine">
                 <div class="discount-badge">-30%</div>
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Stylish cafe chair</div>
-                <div class="product-price">
-                    Rp 2.500.000 <del>Rp 3.500.000</del>
+                <div class="product-information">
+                    <div class="product-name">Syltherine</div>
+                    <div class="product-inform">Stylish cafe chair</div>
+                    <div class="product-price">
+                        Rp 2.500.000 <del>Rp 3.500.000</del>
+                    </div>
                 </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
@@ -89,9 +96,11 @@
             <!-- Product 2 -->
             <div class="products-block">
                 <img src="image/leviosa.png" alt="leviosa">
-                <div class="product-name">Leviosa</div>
-                <div class="product-inform">Stylish cafe chair</div>
-                <div class="product-price">Rp 2.500.000</div>
+                <div class="product-information">
+                    <div class="product-name">Leviosa</div>
+                    <div class="product-inform">Stylish cafe chair</div>
+                    <div class="product-price">Rp 2.500.000</div>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -106,14 +115,16 @@
     
             <!-- Product 3 -->
             <div class="products-block">
-                <img src="image/lolito.png" alt="lolito">
-                <!-- <img src="image/discount-50%.png" alt="discount"> -->
-                <div class="discount-badge">-50%</div>
-                <div class="product-name">Lolito</div>
-                <div class="product-inform">Luxury big sofa</div>
-                <div class="product-price">
-                    Rp 7.000.000 <del>Rp 14.000.000</del>
-                </div>
+                    <img src="image/lolito.png" alt="lolito">
+                    <div class="product-information">
+                        <div class="discount-badge">-50%</div>
+                        <div class="product-name">Lolito</div>
+                        <div class="product-inform">Luxury big sofa</div>
+                        <div class="product-price">
+                            Rp 7.000.000 <del>Rp 14.000.000</del>
+                        </div>
+                    </div>
+                    
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -130,9 +141,11 @@
             <div class="products-block">
                 <img src="image/respira.png" alt="respira">
                 <div class="new-badge">New</div>
-                <div class="product-name">Respira</div>
-                <div class="product-inform">Outdoor bar table and stool</div>
-                <div class="product-price">Rp 500.000</div>
+                <div class="product-information">
+                    <div class="product-name">Respira</div>
+                    <div class="product-inform">Outdoor bar table and stool</div>
+                    <div class="product-price">Rp 500.000</div>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -148,9 +161,11 @@
             <!-- Product 5 -->
             <div class="products-block">
                 <img src="image/grifo.png" alt="grifo">
-                <div class="product-name">Grifo</div>
-                <div class="product-inform">Night lamp</div>
-                <div class="product-price">Rp 1.500.000</div>
+                <div class="product-information">
+                    <div class="product-name">Grifo</div>
+                    <div class="product-inform">Night lamp</div>
+                    <div class="product-price">Rp 1.500.000</div>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -167,9 +182,11 @@
             <div class="products-block">
                 <img src="image/muggo.png" alt="muggo">
                 <div class="discount-badge">-50%</div>
-                <div class="product-name">Muggo</div>
-                <div class="product-inform">Small mug</div>
-                <div class="product-price">Rp 150.000</div>
+                <div class="product-information">
+                    <div class="product-name">Muggo</div>
+                    <div class="product-inform">Small mug</div>
+                    <div class="product-price">Rp 150.000</div>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -186,10 +203,12 @@
             <div class="products-block">
                 <img src="image/pingky.png" alt="pingky">
                 <div class="new-badge">New</div>
-                <div class="product-name">Pingky</div>
-                <div class="product-inform">Cute bed set</div>
-                <div class="product-price">
-                    Rp 7.000.000 <del>Rp 14.000.000</del>
+                <div class="product-information">
+                    <div class="product-name">Pingky</div>
+                    <div class="product-inform">Cute bed set</div>
+                    <div class="product-price">
+                        Rp 7.000.000 <del>Rp 14.000.000</del>
+                    </div>
                 </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
@@ -207,9 +226,11 @@
             <div class="products-block">
                 <img src="image/potty.png" alt="potty">
                 <div class="new-badge">New</div>
-                <div class="product-name">Potty</div>
-                <div class="product-inform">Minimalist flower pot</div>
-                <div class="product-price">Rp 500.000</div>
+                <div class="product-information">
+                    <div class="product-name">Potty</div>
+                    <div class="product-inform">Minimalist flower pot</div>
+                    <div class="product-price">Rp 500.000</div>
+                </div>
                 <div class="hover-overlay">
                     <form action="single-product.html">
                         <button class="add-to-cart">Add to cart</button>
@@ -239,7 +260,7 @@
                 <div class="slider-info">
                     <p>01 — Bed Room</p>
                     <h3>Inner Peace</h3>
-                    <a href="#" class="arrow-button">→</a>
+                    <img src="image/arrow-right.png" alt="arrow-right">
                 </div>
             </div>
             <div class="slid-item room2">
@@ -259,46 +280,83 @@
             </div>
         </div>
     </div>
-      
+    <div class="share-you">
+        <p>Share your setup with</p>
+        <h2>#FuniroFurniture</h2>
+    </div>
      <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-top">
-            <p>Share your setup with</p>
-            <h2>#FuniroFurniture</h2>
-        </div>
-        <div class="divider"></div>
+    <!-- <footer class="footer">
         <div class="footer-middle">
-            <div class="footer-section address">
-                <img src="image/logo-footer.png" alt="logo-footer">
-                <p>400 University Drive Suite 200 Coral Gables,<br>FL 33134 USA</p>
-            </div>
-            <div class="footer-section">
-                <div class="footer-inform">Links</div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <div class="footer-inform ">Help</div>
-                <ul>
-                    <li><a href="#">Payment Options</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Privacy Policies</a></li>
-                </ul>
-            </div>
-            <div class="footer-section newsletter">
-                <div class="footer-inform">Newsletter</div>
-                <div class="subscribe-form">
-                    <div class="e-mail">Enter Your Email Address <span class="underline"></span></div>
-                    <div class="subscribe">Subscribe  <span class="underline subscribe"></span></div>
+            <div class="footer-details">
+                <div class="footer-section address">
+                    <img src="image/logo-footer.png" alt="logo-footer">
+                    <p>400 University Drive Suite 200 Coral Gables,<br>FL 33134 USA</p>
+                </div>
+                <div class="footer-section link">
+                    <div class="footer-inform ">Links</div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-inform ">Help</div>
+                    <ul>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <div class="footer-inform">Newsletter</div>
+                    <div class="subscribe-form">
+                        <input type="text" placeholder="Enter Your Email Address" class="e-mail">
+                        <div class="subscribe">Subscribe  </div>
+                    </div>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>2023 Funiro. All rights reserved</p>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>2023 Funiro. All rights reserved</p>
+    </footer> -->
+    <footer class="footer">
+        <div class="footer-middle">
+            <div class="footer-details">
+                <div class="footer-section address">
+                    <img src="image/logo-footer.png" alt="logo-footer">
+                    <p>400 University Drive Suite 200 Coral Gables,<br>FL 33134 USA</p>
+                </div>
+                <div class="footer-section link">
+                    <div class="footer-inform ">Links</div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-inform ">Help</div>
+                    <ul>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <div class="footer-inform">Newsletter</div>
+                    <div class="subscribe-form">
+                        <input type="text" placeholder="Enter Your Email Address" class="e-mail">
+                        <div class="subscribe">Subscribe  </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2023 Funiro. All rights reserved</p>
+            </div>
         </div>
     </footer>
     

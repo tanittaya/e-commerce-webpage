@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test3</title>
+    <title>single-product</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="single-product.css">
 </head>
 <body>
     <nav>
-        <!-- Logo -->
         <div class="logo">
             <img src="image/logo-main.png" alt="logo">
         </div>
-        <button class="toggle-button" onclick="toggleNavbar()">☰</button>
-        <div class="menu">
-            <ul class="navbar">
-                <li><a>Home</a></li>
-                <li><a>Shop</a></li>
-                <li><a>About</a></li>
-                <li><a>Contact</a></li>
-            </ul>
-            <div class="icons">
-                <img src="image/user.png" alt="user">
-                <span>User</span>
-                <img src="image/search.png" alt="search">
-                <span>Search</span>
-                <img src="image/heart.png" alt="heart">
-                <span>Wichlist</span>
-                <img src="image/shopping-cart.png" alt="shopping-cart">
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <img src="image/user.png" alt="user">
+            <img src="image/search.png" alt="search">
+            <img src="image/heart.png" alt="heart">
+            <!-- <img src="image/shopping-cart.png" alt="shopping-cart"> -->
+            <a href="cart.html" class="cart-link">
+                <img src="image/shopping-cart.png" alt="Shopping Cart Icon">
                 <span>Cart</span>
-            </div>
+            </a>
         </div>
     </nav>
     <div class="breadcrumb">
-        <a href="#">Home</a><div class="arrow-right"> > </div><a href="#">Shop</a><div class="arrow-right"> > </div><span class="vertical-line"></span><span>Asgaard sofa</span>
+        <a href="#">Home</a><div class="arrow-right"> > </div><a href="#">Shop</a><div class="arrow-right"> > </div>  <span><img src="image/line-tool.png" alt="line-tool">Asgaard sofa</span>
     </div>
       
     <div class="product-page">
@@ -47,22 +43,21 @@
                 <img src="image/sofa-show4.png" alt="sofa-show4">
             </div>
             <div class="main-image">
-                <img src="image/main-sofa.png" alt="main-product-sofa">
+                <img class="dynamic-image" src="image/" alt="Default Product">
             </div>
         </div>
     
         <!-- Right Section: Product Details -->
         <div class="product-details">
-            <h1>Asgaard sofa</h1>
-            <p class="price">Rs. 250,000.00</p>
+            <h1 class="dynamic-name">Default Product Name</h1>
+            <p class="dynamic-price">Rp 0</p>
           
             <div class="rating">
-                <div class="stars"><img src="image/star.png" alt="star"></div><span class="vertical-line review"></span><span class="reviews">5 Customer Review</span>
+                <div class="stars"><img src="image/star.png" alt="star"></div> <div class="line-review"><img src="image/line-tool.png" alt="line-review"></div><span class="reviews">5 Customer Review</span>
             </div>
     
-            <p class="description">
-                Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
-            </p>
+            <p class="dynamic-description">Default description of the product goes here.</p>
+
     
             <div class="size-options">
                 <h4>Size</h4>
@@ -72,6 +67,7 @@
                     <button>XS</button>
                 </div>
             </div>
+    
             <div class="color-options">
                 <h4>Color</h4>
                 <div class="color-buttons">
@@ -81,34 +77,61 @@
                 </div>
             </div>
     
-            <div class="actions">
+            <!-- <div class="actions">
                 <div class="quantity-selector">
                     <button class="quantity-btn decrement">-</button>
                     <input type="text" class="quantity-input" value="1">
                     <button class="quantity-btn increment">+</button>
                   </div>
                 <button class="add-to-cart">Add To Cart</button>
+            </div> -->
+            <div class="actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn decrement" onclick="handleQuantityChange(-1)">-</button>
+                    <input type="text" class="quantity-input" value="1" readonly>
+                    <button class="quantity-btn increment" onclick="handleQuantityChange(1)">+</button>
+                </div>
+                <button 
+                    class="add-to-cart" 
+                    onclick="addToCart(
+                        document.querySelector('.dynamic-name').textContent,
+                        document.querySelector('.dynamic-description').textContent,
+                        document.querySelector('.dynamic-price').textContent,
+                        document.querySelector('.dynamic-image').src,
+                        parseInt(document.querySelector('.quantity-input').value, 10)
+                    )"
+                >
+                    Add To Cart
+                </button>
             </div>
+            
             <hr>
             <div class="product-meta">
                 <div class="meta-name">
-                    SKU<span class="meta-dot">:</span> SS001
+                    <span class="label">SKU</span>
+                    <span class="meta-dot">:</span>
+                    <span class="value">SS001</span>
                 </div>
                 <div class="meta-name">
-                    Category<span class="meta-dot">:</span> Sofas
+                    <span class="label">Category</span>
+                    <span class="meta-dot">:</span>
+                    <span class="value">Sofas</span>
                 </div>
                 <div class="meta-name">
-                    Tags<span class="meta-dot">:</span> Sofa, Chair, Home, Shop
+                    <span class="label">Tags</span>
+                    <span class="meta-dot">:</span>
+                    <span class="value">Sofa, Chair, Home, Shop</span>
                 </div>
                 <div class="meta-name">
-                    Share<span class="meta-dot">:</span>
-                    <div class="meta-comunity">
+                    <span class="label">Share</span>
+                    <span class="meta-dot">:</span>
+                    <div class="value meta-comunity">
                         <img src="image/facebook-icon.png" alt="facebook">
                         <img src="image/instagram-icon.png" alt="instagram">
                         <img src="image/x-icon.png" alt="x">
                     </div>
                 </div>
-            </div>
+            </div>             
         </div>
     </div>
 
@@ -122,8 +145,6 @@
         <div class="tab-content">
             <p class="tab-content-top">
                 Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
-            </p>
-            <p>
                 Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
             </p>
             <div class="image-gallery">
@@ -141,90 +162,281 @@
         <div class="relate-header">
             Related Products
         </div>
-        <div class="product-menu">
-            <!-- Product 1 -->
-            <div class="products-block">
-                <img src="image/syltherine.png" alt="syltherine">
-                <div class="discount-badge">-30%</div>
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Stylish cafe chair</div>
-                <div class="product-price">
-                    Rp 2.500.000 <del>Rp 3.500.000</del>
+        <div class="product">
+            <div class="product-menu">
+    
+                <!-- Product 1: Syltherine -->
+                <div class="products-block">
+                    <img src="image/syltherine.png" alt="Syltherine">
+                    <div class="discount-badge">-30%</div>
+                    <div class="product-name">Syltherine</div>
+                    <div class="product-inform">Stylish cafe chair</div>
+                    <div class="product-price">Rp 2,500,000 <del>Rp 3,500,000</del></div>
+                    <div class="hover-overlay"
+                        onclick="navigateToPage('single-product.html', 'Syltherine', 'Stylish cafe chair', '2,500,000', 'image/syltherine.png')">
+                        <button
+                            onclick="addToCart('Syltherine', 'Stylish cafe chair', '2,500,000', 'image/syltherine.png'); event.stopPropagation();"
+                            class="add-to-cart">
+                            Add to Cart
+                        </button>
+                        <div class="action-buttons">
+                            <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
     
-            <!-- Product 2 -->
-            <div class="products-block">
-                <img src="image/leviosa.png" alt="leviosa">
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Stylish cafe chair</div>
-                <div class="product-price">Rp 2.500.000</div>
-            </div>
     
-            <!-- Product 3 -->
-            <div class="products-block">
-                <img src="image/lolito.png" alt="lolito">
-                <div class="discount-badge">-50%</div>
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Luxury big sofa</div>
-                <div class="product-price">
-                    Rp 7.000.000 <del>Rp 14.000.000</del>
+                <!-- Product 2: Leviosa -->
+                <div class="products-block">
+                    <img src="image/leviosa.png" alt="Leviosa">
+                    <div class="product-name">Leviosa</div>
+                    <div class="product-inform">Comfortable office chair</div>
+                    <div class="product-price">Rp 2,500,000</div>
+                    <div class="hover-overlay"
+                    onclick="navigateToPage('single-product.html', 'Leviosa', 'Comfortable office chair', '2,500,000', 'image/leviosa.png')">
+                        <button onclick="addToCart('Leviosa', 'Comfortable office chair', '2,500,000', 'image/leviosa.png')"
+                            class="add-to-cart">
+                            Add to Cart
+                        </button>
+                        <div class="action-buttons">
+                            <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
     
-            <!-- Product 4 -->
-            <div class="products-block">
-                <img src="image/respira.png" alt="respira">
-                <div class="new-badge">New</div>
-                <div class="product-name">Syltherine</div>
-                <div class="product-inform">Outdoor bar table and stool</div>
-                <div class="product-price">Rp 500.000</div>
+                <!-- Product 3: Lolito -->
+                <div class="products-block">
+                    <img src="image/lolito.png" alt="Lolito">
+                    <div class="discount-badge">-50%</div>
+                    <div class="product-name">Lolito</div>
+                    <div class="product-inform">Luxury big sofa</div>
+                    <div class="product-price">Rp 7,000,000 <del>Rp 14,000,000</del></div>
+                    <div class="product-price">Rp 2,500,000</div>
+                    <div class="hover-overlay"
+                    onclick="navigateToPage('single-product.html', 'Lolito', 'Luxury big sofa', '7,000,000', 'image/lolito.png')">
+                        <button onclick="addToCart('Lolito', 'Luxury big sofa', '7,000,000', 'image/lolito.png')"
+                            class="add-to-cart">
+                            Add to Cart
+                        </button>
+                        <div class="action-buttons">
+                            <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Product 4: Respira -->
+                <div class="products-block">
+                    <img src="image/respira.png" alt="Respira">
+                    <div class="new-badge">New</div>
+                    <div class="product-name">Respira</div>
+                    <div class="product-inform">Outdoor bar table and stool</div>
+                    <div class="product-price">Rp 500,000</div>
+                    <div class="hover-overlay"
+                    onclick="navigateToPage('single-product.html', 'Respira', 'Outdoor bar table and stool', '500,000', 'image/respira.png')">
+                        <button
+                            onclick="addToCart('Respira', 'Outdoor bar table and stool', '500,000', 'image/respira.png')"
+                            class="add-to-cart">
+                            Add to Cart
+                        </button>
+                        <div class="action-buttons">
+                            <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button>Show More</button>
+     
+            <button> Show more </button>
     </div>
-    <!-- footer-section -->
-    <hr>
     <footer class="footer">
         <div class="footer-middle">
-            <div class="footer-section address">
-                <img src="image/logo-footer.png" alt="logo-footer">
-                <p>400 University Drive Suite 200 Coral Gables,<br>FL 33134 USA</p>
-            </div>
-            <div class="footer-section">
-                <div class="footer-inform">Links</div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <div class="footer-inform ">Help</div>
-                <ul>
-                    <li><a href="#">Payment Options</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Privacy Policies</a></li>
-                </ul>
-            </div>
-            <div class="footer-section newsletter">
-                <div class="footer-inform">Newsletter</div>
-                <div class="subscribe-form">
-                    <div class="e-mail">Enter Your Email Address <span class="underline"></span></div>
-                    <div class="subscribe">Subscribe  <span class="underline subscribe"></span></div>
+            <div class="footer-details">
+                <div class="footer-section address">
+                    <img src="image/logo-footer.png" alt="logo-footer">
+                    <p>400 University Drive Suite 200 Coral Gables,<br>FL 33134 USA</p>
+                </div>
+                <div class="footer-section link">
+                    <div class="footer-inform ">Links</div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-inform ">Help</div>
+                    <ul>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <div class="footer-inform">Newsletter</div>
+                    <div class="subscribe-form">
+                        <input type="text" placeholder="Enter Your Email Address" class="e-mail">
+                        <div class="subscribe">Subscribe  </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>2023 Funiro. All rights reserved</p>
+            <div class="footer-bottom">
+                <p>2023 Funiro. All rights reserved</p>
+            </div>
         </div>
     </footer>
-    <script>
-        function toggleNavbar() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active'); 
-        } 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script >
+        // Log the entire search string to debug if parameters exist in the URL
+        console.log(window.location.search);
+
+        // Parse URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+        const description = params.get("description");
+        const price = params.get("price");
+        const imageUrl = params.get("imageUrl");
+
+        // Log the values for debugging
+        console.log(name, description, price, imageUrl);
+
+        // Update product name
+        const nameElement = document.querySelector(".dynamic-name");
+        if (nameElement && name) {
+            nameElement.textContent = name;
+        }
+
+        // Update product description
+        const descriptionElement = document.querySelector(".dynamic-description");
+        if (descriptionElement && description) {
+            descriptionElement.textContent = description;
+        }
+
+        // Update product price
+        const priceElement = document.querySelector(".dynamic-price");
+        if (priceElement && price) {
+            priceElement.textContent = `Rp ${price}`;
+        }
+
+        // Update product image
+        const imageElement = document.querySelector(".dynamic-image");
+        if (imageElement && imageUrl) {
+            imageElement.src = imageUrl;
+            imageElement.alt = name; // Update alt text with the product name
+        }
+
+
+                            // Function to handle quantity change
+        function handleQuantityChange(delta) {
+        const quantityInput = document.querySelector('.quantity-input');
+        let currentQuantity = parseInt(quantityInput.value, 10) || 1; // Default to 1 if invalid
+        currentQuantity += delta;
+
+        // Prevent quantity from going below 1
+        if (currentQuantity < 1) {
+            currentQuantity = 1;
+        }
+
+        // Update the quantity input value
+        quantityInput.value = currentQuantity;
+        }
+
+        // Function to add item to cart
+        function addToCart(name, description, price, imageUrl, quantity = 1) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Check if the product already exists in the cart
+            const existingItem = cartItems.find(item => item.name === name);
+            if (existingItem) {
+            existingItem.quantity += quantity; // Increment the quantity
+            } else {
+                cartItems.push({ name, description, price, imageUrl, quantity });
+            }
+
+            // Save updated cart to Local Storage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(`Added ${quantity} ${name}(s) to cart!`);
+        }
+
+            // Automatically update quantity input if clicked outside the buttons
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = document.querySelector('.quantity-input');
+                if (parseInt(input.value, 10) < 1) {
+                    input.value = 1;
+                }
+            });
+        });
+        document.querySelector('.add-to-cart').addEventListener('click', function () {
+            const productName = document.querySelector('.dynamic-name').textContent;
+            const productDescription = document.querySelector('.dynamic-description').textContent;
+            const productPrice = document.querySelector('.dynamic-price').textContent;
+            const productImage = document.querySelector('.dynamic-image').src;
+        
+            // เรียกใช้ฟังก์ชัน addToCart และส่งข้อมูลสินค้า
+            addToCart(productName, productDescription, productPrice, productImage);
+        });
+
+        function addToCart(name, description, price, imageUrl) {
+            // ตรวจสอบราคาและทำความสะอาดตัวเลข
+            const cleanedPrice = parseFloat(price.replace(/[^0-9.-]+/g, ''));
+        
+            if (isNaN(cleanedPrice)) {
+                console.error("Invalid price for product:", name);
+                return;
+            }
+        
+            // ดึง Cart จาก Local Storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        
+            // ตรวจสอบว่าสินค้าเคยถูกเพิ่มใน Cart หรือยัง
+            if (cart[name]) {
+                cart[name].quantity += 1; // เพิ่มจำนวน
+            } else {
+                cart[name] = {
+                    description: description,
+                    price: cleanedPrice,
+                    image: imageUrl,
+                    quantity: 1
+                };
+            }
+        
+            // บันทึกข้อมูล Cart ลงใน Local Storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            console.log("Cart updated:", cart);
+        
+            // เปลี่ยนเส้นทางไปยังหน้า Cart Page
+            window.location.href = 'cart.html';
+        }
+
+
+        
+        
+        
+
     </script>
 
 </body>
