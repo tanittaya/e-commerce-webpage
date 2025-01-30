@@ -398,8 +398,6 @@ nav {
         bottom: 150px;
         left: 375px;
     }
-    
-
 }
 
 /* Mobile View (375px-767px) */
@@ -415,6 +413,7 @@ nav {
     .shop-header-text p {
         font-size: 12px; 
     }
+    
 }
 
 
@@ -432,8 +431,8 @@ nav {
 .billing-details {
     width: 608px;
     background: #fff;
-    padding: 35px 0px 0px 74px;
-   
+    /* margin: 63px auto 52px; */
+    padding-left: 111px;
 }
 
 .billing-details h2 {
@@ -466,6 +465,7 @@ input, select, textarea {
     border-radius: 10px;
     font-size: 14px;
     box-sizing: border-box;
+    color: #9F9F9F;
 }
 
 textarea {
@@ -486,6 +486,7 @@ textarea {
     flex: 1;
 }
 
+
 .company-inform > div {
     margin-bottom: 20px;
 }
@@ -503,7 +504,7 @@ input:focus, select:focus, textarea:focus {
 .order-summary {
     width: 533px;
     background: #fff;
-    margin: 63px auto;
+    /* margin: 63px auto; */
     
 }
 
@@ -536,10 +537,14 @@ input:focus, select:focus, textarea:focus {
     color: #000000;
 }
 
-.summary-totals .total {
-    font-weight: bold;
-    font-size: 18px;
+span.total {
+    font-weight: 700;
+    font-size: 24px;
     color: #d4a658;
+}
+.head-total{
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -552,6 +557,8 @@ input:focus, select:focus, textarea:focus {
 }
 .payment-option{
     margin-bottom: 11px;
+    display: flex;
+    gap: 15px;
 }
 
 .payment-option.choices{
@@ -576,14 +583,15 @@ hr {
 
 .payment-option input[type="radio"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
     position: relative;
     margin: 0;
 }
+
 
 .payment-option input[type="radio"]:checked {
     background-color: #000;
@@ -612,7 +620,6 @@ hr {
 .privacy-note a:hover {
     text-decoration: underline;
 }
-
 .place-order-btn {
     width: 318px;
     height: 64px;
@@ -628,10 +635,14 @@ hr {
     left: 111px;
    
 }
+.place-order-btn a{
+    text-decoration: none;
+    color: #000000;
+}
 
 .place-order-btn:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #d4ad6b;
+    
 }
 
 .privacy-policy {
@@ -658,43 +669,63 @@ hr {
     font-size: 24px;
     font-weight: 700;
 }
-@media (max-width: 1024px) { /* Tablet */
-    .checkout-container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .billing-details, .order-summary {
-        width: 80%;
-    }
-
-    .place-order-btn {
-        width: 80%;
-        position: relative;
-        left: 40px;
-    }
-    .order-summary{
-        width: 550px;
-        margin-left: 110px;
-    }
-}
-
-
-@media (max-width: 768px) { /* Phone */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
     .checkout-container {
         flex-direction: column;
-        width: 90%;
-        margin: 0 auto;
+        width: 70%;
+    }
+    input, select, textarea {
+        width: 550px;
+        height: 75px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+        color: #9F9F9F;
+    }
+    .form-group input {
+        width: 550px;
     }
 
     .billing-details, .order-summary {
         width: 100%;
-        margin: 63px auto 52px;
+        padding: 0;
     }
 
     .form-group {
         flex-direction: column;
-        width: 330px;
+    }
+
+    .place-order-btn {
+        width: 100%;
+    }
+    .place-order-btn {
+        position: relative;
+        left: 30px;
+    }
+}
+
+/* Mobile (375px - 767px) */
+@media (max-width: 767px) {
+    .checkout-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .form-group input {
+        width: 350px;
+    }
+
+    .billing-details h2, .order-summary h2 {
+        font-size: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 15px;
+        width: fit-content;
     }
 
     input, select, textarea {
@@ -702,33 +733,23 @@ hr {
     }
 
     .place-order-btn {
-        width: 70%;
+        width: 100%;
+        font-size: 16px;
     }
+
+    .summary-totals span {
+        font-size: 14px;
+    }
+
     .payment-container {
-        background: #fff;
-        width: 330px;
-        margin-top: 22px;
+        width: 100%;
     }
-    .shop-header-logo img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        position: absolute;
-        bottom: 125px;
-        left: 160px;
+    .place-order-btn {
+        position: relative;
+        left: 0px;
+        margin-bottom: 50px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 /* feature section */
 .features-section {
     background-color: #f8f4ee;

@@ -24,8 +24,10 @@
             <img src="image/heart.png" alt="heart">
             <!-- <img src="image/shopping-cart.png" alt="shopping-cart"> -->
             <a href="cart.html" class="cart-link">
-                <img src="image/shopping-cart.png" alt="Shopping Cart Icon">
-                <span>Cart</span>
+                <div class="cart-icon">
+                    <img src="image/shopping-cart.png" alt="shopping-cart-Icon">
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
             </a>
         </div>
     </nav>
@@ -172,8 +174,7 @@
                     <div class="product-name">Syltherine</div>
                     <div class="product-inform">Stylish cafe chair</div>
                     <div class="product-price">Rp 2,500,000 <del>Rp 3,500,000</del></div>
-                    <div class="hover-overlay"
-                        onclick="navigateToPage('single-product.html', 'Syltherine', 'Stylish cafe chair', '2,500,000', 'image/syltherine.png')">
+                    <div class="hover-overlay">
                         <button
                             onclick="addToCart('Syltherine', 'Stylish cafe chair', '2,500,000', 'image/syltherine.png'); event.stopPropagation();"
                             class="add-to-cart">
@@ -181,7 +182,12 @@
                         </button>
                         <div class="action-buttons">
                             <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <a
+                                href="single-product.html?name=Syltherine&description=Stylish%20cafe%20chair&price=2500000&imageUrl=image/syltherine.png">
+                                <span class="icon-hover">
+                                    <img src="image/compress-hover.png" alt="compare"> Compare
+                                </span>
+                            </a>
                             <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                         </div>
                     </div>
@@ -194,15 +200,19 @@
                     <div class="product-name">Leviosa</div>
                     <div class="product-inform">Comfortable office chair</div>
                     <div class="product-price">Rp 2,500,000</div>
-                    <div class="hover-overlay"
-                    onclick="navigateToPage('single-product.html', 'Leviosa', 'Comfortable office chair', '2,500,000', 'image/leviosa.png')">
+                    <div class="hover-overlay">
                         <button onclick="addToCart('Leviosa', 'Comfortable office chair', '2,500,000', 'image/leviosa.png')"
                             class="add-to-cart">
                             Add to Cart
                         </button>
                         <div class="action-buttons">
                             <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <a
+                                href="single-product.html?name=Leviosa&description=Comfortable%20office%20chair&price=2500000&imageUrl=image/leviosa.png">
+                                <span class="icon-hover">
+                                    <img src="image/compress-hover.png" alt="compare"> Compare
+                                </span>
+                            </a>
                             <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                         </div>
                     </div>
@@ -215,15 +225,19 @@
                     <div class="product-name">Lolito</div>
                     <div class="product-inform">Luxury big sofa</div>
                     <div class="product-price">Rp 7,000,000 <del>Rp 14,000,000</del></div>
-                    <div class="hover-overlay"
-                    onclick="navigateToPage('single-product.html', 'Lolito', 'Luxury big sofa', '7,000,000', 'image/lolito.png')">
+                    <div class="hover-overlay">
                         <button onclick="addToCart('Lolito', 'Luxury big sofa', '7,000,000', 'image/lolito.png')"
                             class="add-to-cart">
                             Add to Cart
                         </button>
                         <div class="action-buttons">
                             <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <a
+                                href="single-product.html?name=Lolito&description=Luxury%20big%20sofa&price=7000000&imageUrl=image/lolito.png">
+                                <span class="icon-hover">
+                                    <img src="image/compress-hover.png" alt="compare"> Compare
+                                </span>
+                            </a>
                             <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                         </div>
                     </div>
@@ -236,8 +250,7 @@
                     <div class="product-name">Respira</div>
                     <div class="product-inform">Outdoor bar table and stool</div>
                     <div class="product-price">Rp 500,000</div>
-                    <div class="hover-overlay"
-                    onclick="navigateToPage('single-product.html', 'Respira', 'Outdoor bar table and stool', '500,000', 'image/respira.png')">
+                    <div class="hover-overlay">
                         <button
                             onclick="addToCart('Respira', 'Outdoor bar table and stool', '500,000', 'image/respira.png')"
                             class="add-to-cart">
@@ -245,7 +258,12 @@
                         </button>
                         <div class="action-buttons">
                             <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                            <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                            <a
+                                href="single-product.html?name=Respira&description=Outdoor%20bar%20table%20and%20stool&price=500000&imageUrl=image/respira.png">
+                                <span class="icon-hover">
+                                    <img src="image/compress-hover.png" alt="compare"> Compare
+                                </span>
+                            </a>
                             <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                         </div>
                     </div>
@@ -399,7 +417,7 @@
             addToCart(productName, productDescription, productPrice, productImage);
         });
 
-        function addToCart(name, description, price, imageUrl) {
+        /*function addToCart(name, description, price, imageUrl) {
             // ตรวจสอบราคาและทำความสะอาดตัวเลข
             const cleanedPrice = parseFloat(price.replace(/[^0-9.-]+/g, ''));
         
@@ -429,6 +447,55 @@
         
             // เปลี่ยนเส้นทางไปยังหน้า Cart Page
             window.location.href = 'cart.html';
+        }*/
+        // Function to update the cart count icon immediately
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+            const cartCountElement = document.getElementById('cart-count');
+
+            if (!cartCountElement) {
+                console.warn("Cart count element not found!");
+                return;
+            }
+
+            const uniqueProductCount = Object.keys(cart).length; // Count unique product types
+
+            if (uniqueProductCount > 0) {
+                cartCountElement.textContent = uniqueProductCount;
+                cartCountElement.style.display = "flex"; // Show count
+            } else {
+                cartCountElement.style.display = "none"; // Hide if empty
+            }
+        }
+
+        // Function to add a product to the cart **without needing a refresh**
+        
+        function addToCart(productName, productInform, productPrice, productImage) {
+            const cleanedPrice = parseFloat(productPrice.replace(/[^0-9.-]+/g, ''));
+
+            if (isNaN(cleanedPrice)) {
+                console.error("Invalid price for product:", productName);
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+            if (cart[productName]) {
+                //cart[productName].quantity += 1;
+            } else {
+                cart[productName] = {
+                    inform: productInform,
+                    price: cleanedPrice,
+                    image: productImage,
+                    quantity: 1
+                };
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            updateCartCount();
+
+            alert(`${productName} has been added to your cart!`);
         }
 
 

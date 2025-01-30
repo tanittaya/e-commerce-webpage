@@ -154,3 +154,74 @@ function addToCart(name, description, price, imageUrl, quantity = 1) {
 //     quantityInput.value = currentQuantity;
 // }
 
+// Function to update the cart count icon with the number of unique product types
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartCountElement = document.getElementById('cart-count');
+
+    if (!cartCountElement) {
+        console.warn("Cart count element not found!");
+        return;
+    }
+
+    const uniqueProductCount = Object.keys(cart).length; // Count unique product types
+
+    if (uniqueProductCount > 0) {
+        cartCountElement.textContent = uniqueProductCount;
+        cartCountElement.style.display = "flex"; // Show count
+    } else {
+        cartCountElement.style.display = "none"; // Hide if empty
+    }
+}
+
+// Function to add a product to the cart
+function addToCart(productName, productInform, productPrice, productImage) {
+    const cleanedPrice = parseFloat(productPrice.replace(/[^0-9.-]+/g, ''));
+
+    if (isNaN(cleanedPrice)) {
+        console.error("Invalid price for product:", productName);
+        return;
+    }
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    if (cart[productName]) {
+        cart[productName].quantity += 1;
+    } else {
+        cart[productName] = {
+            inform: productInform,
+            price: cleanedPrice,
+            image: productImage,
+            quantity: 1
+        };
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount(); // ✅ Update cart count icon
+    alert(`${productName} has been added to your cart!`);
+}
+
+// Function to remove a product from the cart
+function removeFromCart(product) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    if (cart[product]) {
+        delete cart[product];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product} has been removed from your cart.`);
+        updateCartCount(); // ✅ Update cart count icon
+    } else {
+        console.warn('Attempted to remove non-existent product:', product);
+    }
+}
+
+// ✅ Ensure cart count updates on page load
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
+
+
+
+
+
+
+

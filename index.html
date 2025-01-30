@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Internship</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <nav>
         <!-- Logo -->
@@ -16,10 +20,10 @@
         <button class="toggle-button" onclick="toggleNavbar()">☰</button>
         <div class="menu">
             <ul class="navbar">
-                <li><a >Home</a></li>
-                <li><a >Shop</a></li>
-                <li><a >About</a></li>
-                <li><a >Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
             </ul>
             <div class="icons">
                 <img src="image/user.png" alt="user">
@@ -29,8 +33,10 @@
                 <img src="image/heart.png" alt="heart">
                 <span>Wichlist</span>
                 <a href="cart.html" class="cart-link">
-                    <img src="image/shopping-cart.png" alt="Shopping Cart Icon">
-                    <span>Cart</span>
+                    <div class="cart-icon">
+                        <img src="image/shopping-cart.png" alt="shopping-cart-Icon">
+                        <span id="cart-count" class="cart-count">0</span>
+                    </div>
                 </a>
             </div>
         </div>
@@ -42,11 +48,12 @@
         <div class="background-inform">
             <h4>New Arrival</h4>
             <h1>Discover Our <br> New Collection</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+            </p>
             <form action="shop.html">
                 <button class="show-more-button">Show More</button>
             </form>
-           
+
         </div>
     </div>
     <div class="browse-range">
@@ -71,7 +78,7 @@
         <div class="big-topic-text">Our Products</div>
         <div class="product-menu">
             <!-- Product 1 -->
-            <div class="products-block">
+            <!-- <div class="products-block">
                 <img src="image/syltherine.png" alt="syltherine">
                 <div class="discount-badge">-30%</div>
                 <div class="product-information">
@@ -91,10 +98,10 @@
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                   </div>
                 </div>
-            </div>
-    
+            </div> -->
+
             <!-- Product 2 -->
-            <div class="products-block">
+            <!-- <div class="products-block">
                 <img src="image/leviosa.png" alt="leviosa">
                 <div class="product-information">
                     <div class="product-name">Leviosa</div>
@@ -111,10 +118,10 @@
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                   </div>
                 </div>
-            </div>
-    
+            </div> -->
+
             <!-- Product 3 -->
-            <div class="products-block">
+            <!-- <div class="products-block">
                     <img src="image/lolito.png" alt="lolito">
                     <div class="product-information">
                         <div class="discount-badge">-50%</div>
@@ -135,10 +142,10 @@
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                     </div>
                 </div>
-            </div>
-    
+            </div> -->
+
             <!-- Product 4 -->
-            <div class="products-block">
+            <!-- <div class="products-block">
                 <img src="image/respira.png" alt="respira">
                 <div class="new-badge">New</div>
                 <div class="product-information">
@@ -156,8 +163,108 @@
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
                   </div>
                 </div>
+            </div> -->
+            <!-- Product 1: Syltherine -->
+            <div class="products-block">
+                <img src="image/syltherine.png" alt="Syltherine">
+                <div class="discount-badge">-30%</div>
+                <div class="product-name">Syltherine</div>
+                <div class="product-inform">Stylish cafe chair</div>
+                <div class="product-price">Rp 2,500,000 <del>Rp 3,500,000</del></div>
+                <div class="hover-overlay">
+                    <button
+                        onclick="addToCart('Syltherine', 'Stylish cafe chair', '2,500,000', 'image/syltherine.png'); event.stopPropagation();"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <a
+                            href="single-product.html?name=Syltherine&description=Stylish%20cafe%20chair&price=2500000&imageUrl=image/syltherine.png">
+                            <span class="icon-hover">
+                                <img src="image/compress-hover.png" alt="compare"> Compare
+                            </span>
+                        </a>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                    </div>
+                </div>
             </div>
-    
+
+
+            <!-- Product 2: Leviosa -->
+            <div class="products-block">
+                <img src="image/leviosa.png" alt="Leviosa">
+                <div class="product-name">Leviosa</div>
+                <div class="product-inform">Comfortable office chair</div>
+                <div class="product-price">Rp 2,500,000</div>
+                <div class="hover-overlay">
+                    <button onclick="addToCart('Leviosa', 'Comfortable office chair', '2,500,000', 'image/leviosa.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <a
+                            href="single-product.html?name=Leviosa&description=Comfortable%20office%20chair&price=2500000&imageUrl=image/leviosa.png">
+                            <span class="icon-hover">
+                                <img src="image/compress-hover.png" alt="compare"> Compare
+                            </span>
+                        </a>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Lolito -->
+            <div class="products-block">
+                <img src="image/lolito.png" alt="Lolito">
+                <div class="discount-badge">-50%</div>
+                <div class="product-name">Lolito</div>
+                <div class="product-inform">Luxury big sofa</div>
+                <div class="product-price">Rp 7,000,000 <del>Rp 14,000,000</del></div>
+                <div class="hover-overlay">
+                    <button onclick="addToCart('Lolito', 'Luxury big sofa', '7,000,000', 'image/lolito.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <a
+                            href="single-product.html?name=Lolito&description=Luxury%20big%20sofa&price=7000000&imageUrl=image/lolito.png">
+                            <span class="icon-hover">
+                                <img src="image/compress-hover.png" alt="compare"> Compare
+                            </span>
+                        </a>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Respira -->
+            <div class="products-block">
+                <img src="image/respira.png" alt="Respira">
+                <div class="new-badge">New</div>
+                <div class="product-name">Respira</div>
+                <div class="product-inform">Outdoor bar table and stool</div>
+                <div class="product-price">Rp 500,000</div>
+                <div class="hover-overlay">
+                    <button
+                        onclick="addToCart('Respira', 'Outdoor bar table and stool', '500,000', 'image/respira.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
+                        <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
+                        <a
+                            href="single-product.html?name=Respira&description=Outdoor%20bar%20table%20and%20stool&price=500000&imageUrl=image/respira.png">
+                            <span class="icon-hover">
+                                <img src="image/compress-hover.png" alt="compare"> Compare
+                            </span>
+                        </a>
+                        <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
+                    </div>
+                </div>
+            </div>
             <!-- Product 5 -->
             <div class="products-block">
                 <img src="image/grifo.png" alt="grifo">
@@ -167,20 +274,26 @@
                     <div class="product-price">Rp 1.500.000</div>
                 </div>
                 <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
+                    <button onclick="addToCart('Grifo', 'Night lamp', '1,500,000', 'image/grifo.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
                         <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <a
+                            href="single-product.html?name=Grifo&description=Night%20lamp&price=1500000&imageUrl=image/grifo.png">
+                            <span class="icon-hover">
+                                <img src="image/compress-hover.png" alt="compare"> Compare
+                            </span>
+                        </a>
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
+                    </div>
                 </div>
             </div>
-    
-            <!-- Product 6 -->
+
+            <!-- Product 6: Muggo -->
             <div class="products-block">
-                <img src="image/muggo.png" alt="muggo">
+                <img src="image/muggo.png" alt="Muggo">
                 <div class="discount-badge">-50%</div>
                 <div class="product-information">
                     <div class="product-name">Muggo</div>
@@ -188,43 +301,48 @@
                     <div class="product-price">Rp 150.000</div>
                 </div>
                 <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
+                    <button onclick="addToCart('Muggo', 'Small mug', '150000', 'image/muggo.png')" class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
                         <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <a
+                            href="single-product.html?name=Muggo&description=Small%20mug&price=150000&imageUrl=image/muggo.png">
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="compare"> Compare</span>
+                        </a>
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
+                    </div>
                 </div>
             </div>
-    
-            <!-- Product 7 -->
+
+            <!-- Product 7: Pingky -->
             <div class="products-block">
-                <img src="image/pingky.png" alt="pingky">
+                <img src="image/pingky.png" alt="Pingky">
                 <div class="new-badge">New</div>
                 <div class="product-information">
                     <div class="product-name">Pingky</div>
                     <div class="product-inform">Cute bed set</div>
-                    <div class="product-price">
-                        Rp 7.000.000 <del>Rp 14.000.000</del>
-                    </div>
+                    <div class="product-price">Rp 7.000.000 <del>Rp 14.000.000</del></div>
                 </div>
                 <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
+                    <button onclick="addToCart('Pingky', 'Cute bed set', '7000000', 'image/pingky.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
                         <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <a
+                            href="single-product.html?name=Pingky&description=Cute%20bed%20set&price=7000000&imageUrl=image/pingky.png">
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="compare"> Compare</span>
+                        </a>
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
+                    </div>
                 </div>
             </div>
-    
-            <!-- Product 8 -->
+
+            <!-- Product 8: Potty -->
             <div class="products-block">
-                <img src="image/potty.png" alt="potty">
+                <img src="image/potty.png" alt="Potty">
                 <div class="new-badge">New</div>
                 <div class="product-information">
                     <div class="product-name">Potty</div>
@@ -232,17 +350,22 @@
                     <div class="product-price">Rp 500.000</div>
                 </div>
                 <div class="hover-overlay">
-                    <form action="single-product.html">
-                        <button class="add-to-cart">Add to cart</button>
-                    </form>
-                  <div class="action-buttons">
+                    <button onclick="addToCart('Potty', 'Minimalist flower pot', '500000', 'image/potty.png')"
+                        class="add-to-cart">
+                        Add to Cart
+                    </button>
+                    <div class="action-buttons">
                         <span class="icon-hover"><img src="image/share-hover.png" alt="share">Share</span>
-                        <span class="icon-hover"><img src="image/compress-hover.png" alt="share">Compare</span>
+                        <a
+                            href="single-product.html?name=Potty&description=Minimalist%20flower%20pot&price=500000&imageUrl=image/potty.png">
+                            <span class="icon-hover"><img src="image/compress-hover.png" alt="compare"> Compare</span>
+                        </a>
                         <span class="icon-hover"><img src="image/heart-hover.png" alt="like">Like</span>
-                  </div>
+                    </div>
                 </div>
             </div>
-            
+
+
         </div>
         <form action="shop.html">
             <button class="show-more-button">Show More</button>
@@ -250,9 +373,9 @@
     </div>
     <div class="rooms-inspiration">
         <div class="inspiration-inform">
-          <h1 class="big-topic-text">50+ Beautiful rooms inspiration</h1>
-          <p>Our designer already made a lot of beautiful prototypes of rooms that inspire you.</p>
-          <button class="explore-button">Explore More</button>
+            <h1 class="big-topic-text">50+ Beautiful rooms inspiration</h1>
+            <p>Our designer already made a lot of beautiful prototypes of rooms that inspire you.</p>
+            <button class="explore-button">Explore More</button>
         </div>
         <div class="slid-section">
             <div class="slid-item">
@@ -284,7 +407,7 @@
         <p>Share your setup with</p>
         <h2>#FuniroFurniture</h2>
     </div>
-     <!-- Footer Section -->
+    <!-- Footer Section -->
     <!-- <footer class="footer">
         <div class="footer-middle">
             <div class="footer-details">
@@ -350,7 +473,7 @@
                     <div class="footer-inform">Newsletter</div>
                     <div class="subscribe-form">
                         <input type="text" placeholder="Enter Your Email Address" class="e-mail">
-                        <div class="subscribe">Subscribe  </div>
+                        <div class="subscribe">Subscribe </div>
                     </div>
                 </div>
             </div>
@@ -359,14 +482,64 @@
             </div>
         </div>
     </footer>
-    
+
 
     <script>
         function toggleNavbar() {
             const menu = document.querySelector('.menu');
-            menu.classList.toggle('active'); 
-        } 
-        
+            menu.classList.toggle('active');
+        }
+        // Function to update the cart count icon immediately
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+            const cartCountElement = document.getElementById('cart-count');
+
+            if (!cartCountElement) {
+                console.warn("Cart count element not found!");
+                return;
+            }
+
+            const uniqueProductCount = Object.keys(cart).length; // Count unique product types
+
+            if (uniqueProductCount > 0) {
+                cartCountElement.textContent = uniqueProductCount;
+                cartCountElement.style.display = "flex"; // Show count
+            } else {
+                cartCountElement.style.display = "none"; // Hide if empty
+            }
+        }
+
+        // Function to add a product to the cart **without needing a refresh**
+        function addToCart(productName, productInform, productPrice, productImage) {
+            const cleanedPrice = parseFloat(productPrice.replace(/[^0-9.-]+/g, ''));
+
+            if (isNaN(cleanedPrice)) {
+                console.error("Invalid price for product:", productName);
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+            if (cart[productName]) {
+                cart[productName].quantity += 1;
+            } else {
+                cart[productName] = {
+                    inform: productInform,
+                    price: cleanedPrice,
+                    image: productImage,
+                    quantity: 1
+                };
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            updateCartCount();
+
+            alert(`${productName} has been added to your cart!`);
+        }
+
     </script>
+    <script src="action.js"></script>
 </body>
+
 </html>
